@@ -1,0 +1,145 @@
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  max-width: 100%;
+}
+.grid-column {
+  flex-direction: column;
+}
+.text-center {
+  text-align: center
+}
+.table{
+  color: #FFF;
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+.table td, .table th {
+  vertical-align: top;
+  border: 0;
+  padding: 15px 0;
+}
+.table th{
+  line-height: 24px;
+  font-size: 24px;
+  font-weight: 100;
+  padding-top: 30px;
+}
+.table td{
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 100;
+  /* height: 51px; */
+  white-space: nowrap;  
+  text-overflow:ellipsis; 
+  overflow:hidden;
+}
+
+.table tbody tr{
+  background: linear-gradient(to right rgba(11,29,38,0.4),rgba(25,65,83,0.4),rgba(10,33,44,0.4));
+  box-shadow: 0 0 1px rgba(0,255,246,0.35) inset;
+  border-top: 1px solid rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.table thead th:first-of-type,
+.table tbody td:first-of-type{
+  padding-left: 30px;
+}
+.table .no-data{
+  height: 255px;
+  vertical-align: middle;
+}
+.filter{
+  text-align: center;
+}
+.filter-item{
+  display: inline-block;
+  margin: 0 10px;
+  padding: 3px 12px;
+  border-radius: 3px;
+  font-size: 21px;
+  color: #1cc0cf;
+  background: linear-gradient(#117a8e, rgba(0,0,0,1));
+  box-shadow: 0 0 1px 1px #117a8e;
+  line-height: 1;
+  transition: all 0.4s;
+}
+.filter-item:hover{
+  text-decoration: none;
+  color: #FFF;
+}
+.filter-item.active{
+  color: #FFF;
+  background: linear-gradient(#26fbfc,rgba(0,0,0,1), rgba(0,0,0,1));
+  box-shadow: 0 0 1px 1px #ffc900;
+}
+.icon{
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+}
+.icon.save{
+  background-image: url(./iconfont-save.png);
+}
+.icon.submit{
+  background-image: url(./iconfont-submit.png);
+}
+.icon.progress{
+  background-image: url(./iconfont-progress.png);
+  width: 18px;
+  height: 20px;
+}
+.icon.complete{
+  background-image: url(./iconfont-complete.png);
+  width: 25px;
+  height: 20px;
+}
+.icon.end{
+  background-image: url(./iconfont-end.png);
+}
+.icon.delete{
+  background-image: url(./iconfont-delete.png);
+}
+
+/*隐藏百度地图LOGO*/
+.anchorBL{
+  display: none;
+}
+.BMap_Marker::before,.BMap_Marker::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 57px;
+  height: 57px;
+  background: url(./point-1.png) no-repeat;
+  background-size: cover;
+  animation: rotation 5s linear infinite;
+}
+.BMap_Marker::after{
+  background-image: url(./point-2.png);
+  animation: rotationDESC 2s linear infinite;
+}
+@keyframes rotation{
+  to {transform: rotate(0deg);}
+  from {transform: rotate(360deg);}
+}
+@keyframes rotationDESC{
+  to {transform: rotate(360deg);}
+  from {transform: rotate(0deg);}
+}
+
+#canvas{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
