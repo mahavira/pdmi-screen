@@ -13,7 +13,7 @@
       <tbody v-if="list.length">
         <tr v-for="(item,index) in list" :key="item.id">
           <td style="width: 100px;max-width: 100px;">{{index+1}}</td>
-          <td style="width: 480px;max-width: 480px;">{{item.name}}</td>
+          <td style="width: 480px;max-width: 480px;"><a :href="item.targetUrl" target="_blank">{{item.name}}</a></td>
           <td class="text-center" style="width: 100px;max-width: 100px;">{{item.productState}}</td>
           <td class="text-center" style="width: 100px;max-width: 100px;">{{item.author}}</td>
           <td class="text-center" style="width: 120px;max-width: 120px;">{{item.created}}</td>
@@ -50,7 +50,8 @@ export default {
               name: n.name,
               productState: n.productState,
               author: n.author,
-              created: n.created ? n.created.slice(0, 10) : null
+              created: n.created ? n.created.slice(0, 10) : null,
+              targetUrl: './static/login.html?target_url=' + encodeURIComponent(n.detailUrl)
             }
           })
           this.totalPages = res.totalPages

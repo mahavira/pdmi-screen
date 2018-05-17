@@ -11,7 +11,7 @@
     </thead>
     <tbody v-if="list.length">
       <tr v-for="item in list" :key="item.id">
-        <td style="width: 690px;max-width: 690px;">{{item.title}}</td>
+        <td style="width: 690px;max-width: 690px;"><a :href="item.sourceAddr">{{item.title}}</a></td>
         <td class="text-center">{{item.syncTime}}</td>
       </tr>
     </tbody>

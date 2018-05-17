@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>登录</title>
+
+</head>
+
+<body>
+正在跳转中...
+  <form method="post" action="https://oauth.pup.hubpd.com/pup-asserver/authorize" name="login">
+    <input name="username" id="username" type="hidden" value="baodaozhushou"> 
+    <input name="state" type="hidden" value="0"> 
+    <input name="available" type="hidden" value="0"> 
+    <input name="password" id="password" type="hidden" value="as12345678"> 
+    <input name="client_id" id="client_id" type="hidden" value="91950177843441d19c56b69dc755bced"> 
+    <input name="response_type" type="hidden" value="code">
+    <input name="redirect_uri" id="redirect_uri" type="hidden" value="http://www.asrbszycf.com/">
+    <input name="target_url" id="target_url" type="hidden" value="http://www.asrbszycf.com/DYPDNewsCommandWeb/views/select/select_details.html?resourceGuid=77a7657c-664a-862f-245f-6b99dd07564e">
+  </form>
+  </div>
+  <script>
+    function getQueryString(name) {
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+      var r = window.location.search.substr(1).match(reg)
+      if (r != null) return unescape(r[2])
+      return null
+    }
+    var data = {
+      username: 'baodaozhushou',
+      password: 'as12345678',
+      client_id: '91950177843441d19c56b69dc755bced',
+      redirect_uri: 'http://www.asrbszycf.com/',
+      target_url: 'http://www.asrbszycf.com/DYPDNewsCommandWeb/views/select/select_details.html?resourceGuid=77a7657c-664a-862f-245f-6b99dd07564e',
+    }
+    for (var k in data) {
+      var val = getQueryString(k) || data[k]
+      document.getElementById(k).value = val
+    }
+
+    document.login.submit()
+  </script>
+</body>
+
+</html>
