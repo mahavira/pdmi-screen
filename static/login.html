@@ -3,19 +3,90 @@
 
 <head>
   <meta charset="utf-8">
+  <title>正在跳转...</title>
+  <style type="text/css">
+  body{
+    text-align: center
+  }
+    .box{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      color: #555;
+      transform: translate(-50%,-50%);
+    }
+    .loading1 {
+      display: inline-block;
+      position: relative;
+      width: 50px;
+      height: 50px;
+    }
 
-  <title>登录</title>
+    .loading {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      margin: 0;
+      border-radius: 50%;
+      position: absolute;
+      background-color: #555;
+      -webkit-animation: load 0.5s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+      animation: load 0.5s cubic-bezier(0.77, 0.47, 0.64, 0.28) alternate infinite;
+    }
 
+    .b1 {
+      animation-delay: -0.5s;
+      left: 5px;
+    }
+
+    .b2 {
+      animation-delay: -0.2s;
+      left: 20px;
+    }
+
+    .b3 {
+      animation-delay: 0s;
+      left: 35px;
+    }
+
+    @keyframes load {
+      from {
+        top: 10px;
+      }
+      to {
+        top: 20px;
+      }
+    }
+
+    @-webkit-keyframes load {
+      from {
+        top: 10px;
+      }
+      to {
+        top: 20px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
-正在跳转中...
+  <div class="box">
+    <div class="loading1">
+      <div class="loading b1"></div>
+      <div class="loading b2"></div>
+      <div class="loading b3"></div>
+    </div>
+    <div>正在跳转...</div>
+  </div>
   <form method="post" action="https://oauth.pup.hubpd.com/pup-asserver/authorize" name="login">
-    <input name="username" id="username" type="hidden" value="baodaozhushou"> 
-    <input name="state" type="hidden" value="0"> 
-    <input name="available" type="hidden" value="0"> 
-    <input name="password" id="password" type="hidden" value="as12345678"> 
-    <input name="client_id" id="client_id" type="hidden" value="91950177843441d19c56b69dc755bced"> 
+    <input name="username" id="username" type="hidden" value="baodaozhushou">
+    <input name="state" type="hidden" value="0">
+    <input name="available" type="hidden" value="0">
+    <input name="password" id="password" type="hidden" value="as12345678">
+    <input name="client_id" id="client_id" type="hidden" value="91950177843441d19c56b69dc755bced">
     <input name="response_type" type="hidden" value="code">
     <input name="redirect_uri" id="redirect_uri" type="hidden" value="http://www.asrbszycf.com/">
     <input name="target_url" id="target_url" type="hidden" value="http://www.asrbszycf.com/DYPDNewsCommandWeb/views/select/select_details.html?resourceGuid=77a7657c-664a-862f-245f-6b99dd07564e">
@@ -41,6 +112,7 @@
     }
 
     document.login.submit()
+
   </script>
 </body>
 

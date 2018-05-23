@@ -56,7 +56,7 @@ export default {
           }
         }).then(res => {
           this.list = res.content.map(n => {
-            return {
+            return Object.assign(n, {
               id: n.id,
               title: n.title,
               status: cls ? cls[n.topicStatus] : null,
@@ -64,7 +64,7 @@ export default {
               department: n.department,
               exeStartTime: n.exeStartTime ? n.exeStartTime.slice(0, 10) : null,
               targetUrl: './static/login.html?target_url=' + encodeURIComponent(n.detailUrl)
-            }
+            })
           })
           this.totalPages = res.totalPages
           return resolve()

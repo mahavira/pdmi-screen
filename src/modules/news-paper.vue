@@ -68,6 +68,7 @@ export default {
     handleSwitch (index) {
       this.switch(index)
       this.startTimer()
+      window.open(this.images[index].url)
     },
     /**
      * 定时自动刷新

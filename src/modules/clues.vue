@@ -3,7 +3,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th>线索名称</th>
+        <th>线索名称1</th>
         <th class="filter">
             <a v-for="(item,index) in filters" :key="index" href="javascript:;" class="filter-item" :class="{active:index==filter}" @click="handleFilter(index)">{{item.cn}}</a>
         </th>
@@ -11,7 +11,7 @@
     </thead>
     <tbody v-if="list.length">
       <tr v-for="item in list" :key="item.id">
-        <td style="width: 690px;max-width: 690px;"><a :href="item.sourceAddr">{{item.title}}</a></td>
+        <td style="width: 690px;max-width: 690px;"><a :href="item.sourceAddr" target="_blank">{{item.title}}</a></td>
         <td class="text-center">{{item.syncTime}}</td>
       </tr>
     </tbody>
@@ -59,11 +59,11 @@ export default {
           }
         }).then(res => {
           this.list = res.content.map((n, i) => {
-            return {
+            return Object.assign(n, {
               id: n.id,
               title: n.title,
               syncTime: n.syncTime ? n.syncTime.slice(0, 10) : null
-            }
+            })
           })
           this.totalPages = res.totalPages
           resolve()

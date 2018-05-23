@@ -45,14 +45,14 @@ export default {
           }
         }).then(res => {
           this.list = res.content.map((n, i) => {
-            return {
+            return Object.assign(n, {
               resourceid: n.resourceid,
               name: n.name,
               productState: n.productState,
               author: n.author,
               created: n.created ? n.created.slice(0, 10) : null,
               targetUrl: './static/login.html?target_url=' + encodeURIComponent(n.detailUrl)
-            }
+            })
           })
           this.totalPages = res.totalPages
           resolve()
