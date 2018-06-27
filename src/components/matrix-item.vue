@@ -4,8 +4,8 @@
       <h2 class="hd-title">{{title}}</h2>
       <marquee class="hd-extra" scrolldelay=0>
         <span v-for="item in news" :key="item.url">
-          <span class="hot">{{item.name}}</span>
-          <span class="eye">{{item.read?item.read:0}}</span>
+          <!-- <span class="hot">{{item.name}}</span>
+          <span class="eye">{{item.read?item.read:0}}</span> -->
         </span>
       </marquee>
     </div>
